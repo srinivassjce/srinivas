@@ -1,0 +1,353 @@
+Python notes
+============
+
+On Linux, Mac OS X, and other POSIX systems, use the versioned Python commands in combination with the -m switch to run the appropriate copy of pip:
+
+python2   -m pip install SomePackage  # default Python 2
+python2.7 -m pip install SomePackage  # specifically Python 2.7
+python3   -m pip install SomePackage  # default Python 3
+python3.4 -m pip install SomePackage  # specifically Python 3.4
+Appropriately versioned pip commands may also be available.
+
+On Windows, use the py Python launcher in combination with the -m switch:
+
+py -2   -m pip install SomePackage  # default Python 2
+py -2.7 -m pip install SomePackage  # specifically Python 2.7
+py -3   -m pip install SomePackage  # default Python 3
+py -3.4 -m pip install SomePackage  # specifically Python 3.4
+
+py -3.4 -->enter into python powershell
+
+python 2 v/s Python 3 
+======================
+Division operator
+--------------------
+print 7 / 5
+print -7 / 5   
+ 
+'''
+Output in Python 2.x
+1
+-2
+Output in Python 3.x :
+1.4
+-1.4
+
+print function
+--------------
+print 'hello' 
+print ('hello')
+
+Unicode
+-------------
+In Python 2, implicit str type is ASCII. But in Python 3.x implicit str type is Unicode.
+print(type('default string'))
+print(type(b'string with b'))
+ 
+ 
+'''
+Output in Python 2.x (Bytes is same as str)
+<type 'str'>
+<type 'str'>
+ 
+Output in Python 3.x (Bytes and str are different)
+<class 'str'>
+<class 'bytes'>
+'''
+
+
+In Python 2.x also supports Unicode
+
+print(type('default string '))
+print(type(u'string with b '))
+ 
+'''
+Output in Python 2.x (Unicode and str are different)
+<type 'str'>
+<type 'unicode'>
+ 
+Output in Python 3.x (Unicode and str are same)
+<class 'str'>
+<class 'str'
+
+E.g 
+============
+root@ubuntu:/home/act# python2
+Python 2.7.6 (default, Oct 26 2016, 20:32:47) 
+[GCC 4.8.4] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print type(b'byte type does not exist')
+<type 'str'>
+
+root@ubuntu:/home/act# python3
+Python 3.4.3 (default, Nov 17 2016, 01:11:57) 
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print (type(b'byte type does not exist') )
+<class 'bytes'>
+
+
+xrange
+--------------
+for x in xrange(1, 5):
+    print(x),
+ 
+for x in range(1, 5):
+    print(x),
+ 
+'''
+Output in Python 2.x
+1 2 3 4 1 2 3 4
+ 
+Output in Python 3.x
+NameError: name 'xrange' is not defined
+xrange is obsolute in 3.x which is used as range 
+
+
+Error Handling
+
+_future_ module
+===================
+
+For example, in below Python 2.x code, we use Python 3.x’s integer division behavior using __future__ module
+
+# In below python 2.x code, division works
+# same as Python 3.x because we use  __future__
+from __future__ import division
+ 
+print 7 / 5
+print -7 / 5
+Run on IDE
+Output :
+
+1.4
+-1.4
+Another example where we use brackets in Python 2.x using __future__ module
+
+from __future__ import print_function    
+ 
+==========================================
+
+
+
+
+File operations
++++++++++++++++++++++
+
+fd=open(´Filename´,´r´) 
+fd.read() -->bigstring
+fd.readlines() -->return all lines in list
+fd.readline().strip() -->return 1 line at a time 
+fd.close()
+
+fd=open(´Filename´,´w´) 
+fd.write(string)
+fd.writelines(list)
+fd.close
+
+import os
+import sys , globe
+
+for root, dirs,files in os.walk("c://*") :
+	print files 
+	print dir 
+
+	
+import os
+for root, dirs, files in os.walk(".", topdown=False):
+   for name in files:
+      print(os.path.join(root, name))
+   for name in dirs:
+      print(os.path.join(root, name))
+
+Diffenciated between files and directory using ls -l | grep '^d'
+list only files --->ls  -l | grep -i '^-'
+ls -Art | tail -n 1
+
+==> differnce ---input and raw_input 
+
+
+ 
+	  
+
+=====================
+
+if len(dir_list) >0 :
+    cur_directory=dir[0]
+	list_of_files = glob.glob (cur + '*')
+    print (list_of_files ) 	
+   
+
+
+
+
+
+import os
+import sys , globe
+
+for root, dirs,files in os.walk("c://*") :
+	print files 
+	print dir 
+
+	
+import os
+for root, dirs, files in os.walk(".", topdown=False):
+   for name in files:
+      print(os.path.join(root, name))
+   for name in dirs:
+      print(os.path.join(root, name))
+
+Diffenciated between files and directory using ls -l | grep '^d'
+list only files --->ls  -l | grep -i '^-'
+==> differnce ---input and raw_input 
+
+
+ 
+ 
+
+search file recursvely using python 
+=======================
+import sys, os, glob
+
+dir_list = ["c:\\books\\heap"]
+
+while len(dir_list) > 0:
+    cur_dir = dir_list[0]
+    del dir_list[0]
+    list_of_files = glob.glob(cur_dir+'\\*')
+    for book in list_of_files:
+        if os.path.isfile(book):
+            print(book)
+        else:
+            dir_list.append(book)
+===================
+
+import glob
+import os
+#globe Filename globbing utility
+#glob.glob Return a list of paths matching a pathname pattern
+#getctime(filename)
+	#Return the metadata change time of a file, reported by os.stat().
+#getmtime(filename)
+    #Return the last modification time of a file, reported by os.stat().
+
+list_of_files = glob.glob('*') 
+
+latest_file = max(list_of_files, key=os.path.getctime)
+print latest_file
+
+======================
+
+
+
+The mtime refers to last time the file's contents were changed.
+This can be altered on unix systems in various ways. Often,
+when you restore files from backup, the mtime is altered to indicate the last time the
+contents were changed before the backup was made.
+
+The ctime indicates the last time the inode was altered.
+This cannot be changed. In the above example with the backup, 
+the ctime will still reflect the time of file restoration.
+Additionally, ctime is updated when things like file permissions are changed.
+-------------------------
+using global variables outside file 
+
+#!/usr/bin/python
+import sys
+sys.path.append("/home/act/Desktop/")
+from  Global import *
+print Package
+
+--------------------------------------
+
+import os
+import sys
+# Python 2 example
+dir_name = raw_input("Name of directory to make?:")
+# Run the command based on the OS
+if sys.platform == "Windows":
+    os.system("md " + dir_name)
+elif sys.platform == "Linux":
+    os.system("mkdir " + dir_name)
+else:
+    print "Sorry, we don't currently have support for the " + sys.platform + "OS"
+
+
+------------------------------------------
+
+###cannot use the non-keyword arg after keyword arg	
+###u can use keyword argumnet after non keyword argumnet 
+
+###u cannot use multiple values { got multiple values for keyword argument 'a'}
+
+def test_var_args(farg, *args):
+    print "formal arg:", farg
+    for arg in args:
+        print "another arg:", arg
+
+test_var_args(1, "two", 3)
+Results:
+
+formal arg: 1
+another arg: two
+another arg: 3
+
+def test_var_kwargs(farg, **kwargs):
+    print "formal arg:", farg
+    for key in kwargs:
+        print "another keyword arg: %s: %s" % (key, kwargs[key])
+
+test_var_kwargs(farg=1, myarg2="two", myarg3=3)
+Results:
+
+formal arg: 1
+another keyword arg: myarg2: two
+another keyword arg: myarg3: 3
+
+
+def fun(*args) :
+	print args in args 
+	
+=====================
+
+root@ubuntu:/opt/Script# cat kwargs.py 
+#!/usr/bin/python
+
+def func1(n,*args) :
+	print "number is %s"%n
+	print "rest of argumnets are ",args
+
+
+def func2(*args) :
+	print "reading all argumnets ",args
+
+
+def func3(a,**kwargs) :
+	print "reading arguments  ",kwargs
+
+def func4(n,*a,**k) :
+	print "hi"
+	print a
+	print k
+
+
+def func1(*a,**d) :
+	print a
+	print d
+
+if __name__ == "__main__" :
+	number=1
+	boo=True
+	string="srinivas"
+        list1=[1,2,3,4,5]
+        dict1={
+                'srini' :1 ,
+                'bambdev':2,
+        }
+
+        func4('up','hi','hello','welcome',a=1,b=2,c=3)
+
+word pres lingo
+
+
+
