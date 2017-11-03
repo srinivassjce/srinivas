@@ -1,0 +1,2059 @@
+Python
+=========
+On Linux, Mac OS X, and other POSIX systems, use the versioned Python commands in combination with the -m switch to run the appropriate copy of pip:
+
+python2   -m pip install SomePackage  # default Python 2
+python2.7 -m pip install SomePackage  # specifically Python 2.7
+python3   -m pip install SomePackage  # default Python 3
+python3.4 -m pip install SomePackage  # specifically Python 3.4
+Appropriately versioned pip commands may also be available.
+
+On Windows, use the py Python launcher in combination with the -m switch:
+
+py -2   -m pip install SomePackage  # default Python 2
+py -2.7 -m pip install SomePackage  # specifically Python 2.7
+py -3   -m pip install SomePackage  # default Python 3
+py -3.4 -m pip install SomePackage  # specifically Python 3.4
+
+py -3.4 -->enter into python powershell
+
+python 2 v/s Python 3 
+======================
+Division operator
+--------------------
+print 7 / 5
+print -7 / 5   
+ 
+'''
+Output in Python 2.x
+1
+-2
+Output in Python 3.x :
+1.4
+-1.4
+
+print function
+--------------
+print 'hello' 
+print ('hello')
+
+Unicode
+-------------
+In Python 2, implicit str type is ASCII. But in Python 3.x implicit str type is Unicode.
+print(type('default string'))
+print(type(b'string with b'))
+ 
+ 
+'''
+Output in Python 2.x (Bytes is same as str)
+<type 'str'>
+<type 'str'>
+ 
+Output in Python 3.x (Bytes and str are different)
+<class 'str'>
+<class 'bytes'>
+'''
+
+
+In Python 2.x also supports Unicode
+
+print(type('default string '))
+print(type(u'string with b '))
+ 
+'''
+Output in Python 2.x (Unicode and str are different)
+<type 'str'>
+<type 'unicode'>
+ 
+Output in Python 3.x (Unicode and str are same)
+<class 'str'>
+<class 'str'
+xrange
+--------------
+for x in xrange(1, 5):
+    print(x),
+ 
+for x in range(1, 5):
+    print(x),
+ 
+'''
+Output in Python 2.x
+1 2 3 4 1 2 3 4
+ 
+Output in Python 3.x
+NameError: name 'xrange' is not defined
+xrange is obsolute in 3.x which is used as range 
+
+
+Error Handling
+
+_future_ module
+===================
+
+For example, in below Python 2.x code, we use Python 3.x’s integer division behavior using __future__ module
+
+# In below python 2.x code, division works
+# same as Python 3.x because we use  __future__
+from __future__ import division
+ 
+print 7 / 5
+print -7 / 5
+
+Run on IDE
+Output :
+
+1.4
+-1.4
+Another example where we use brackets in Python 2.x using __future__ module
+
+from __future__ import print_function    
+ 
+
+
+
+
+
+1)Fibonocii number
+  ------------------
+a=0  b =1  for i in range(series-2) : c= a + b a=b b= c
+
+2)factorial of a number
+	--------------------------
+fact(n)
+if n==1: return 1
+else :return n*fact(n-1)
+
+
+3)count the number of users login  @ file
+
+with open (filename,r) as f
+´´´ parsing each line in list
+	s=f.readlines()
+
+for i in s :
+	l.extend( i.strip().split(,) )
+
+	
+dict1={i:l.count(i) for i in l}
+
+ 
+4)removing the duplicate elemnets in list
+
+approach #1 ----> dict={ i :l.count(i) for i in list }
+		  dict.keys()
+		  dict.values()
+
+		  
+approach #2 ---->list list2=[list[0]] list3 ,flag=1 
+		for i in list[1::] :
+	  		for j in list2 :
+				if i == j:
+					flag=1
+					break
+				else :
+					flag=0
+	 		if flag==1 --> append duplicate list
+			else flag ==0 append non-duplicatelist
+
+			
+			
+
+5)argmstrong series
+	i=0
+	p=10
+	while i <= series_len :
+		total=0	
+		if j in str(p) :
+			total += j ** len(str(p)) 
+	 
+		if total == p :
+			armstrong_list.append(p)		
+			i +=1
+
+
+6)tic tac toe and game of numbers
+
+7)pangarams
+
+alphabet=[ chr(i) for i in range(97,123)]
+input_string
+
+flag=1
+
+for j in alphabet:
+	if j is not in inputstring :
+		flag=0
+		break
+
+
+8)GCDLCM
+	use modulus and keep diving the buffer number by smalla in such way that after modulus division -->reminder will be coming smaller number and  divedent becomes biggerrnumber
+
+	
+
+9)prime number and series
+	check modulus of number is zero, then flag =0 break
+flag=1
+min=2
+max=seriescount
+while min < max :
+	
+	for i in range(2,min/2) :
+		if min % i == 0 :
+			flag=0	
+			break
+
+	if flag== 1  :
+		append min to list	
+		
+	min=min+1
+	flag=1
+
+
+
+10)runlengthcode
+import re
+[ ´0x´+ str(len(match1)+ 1)  +  match0  for (match0 ,match1) in refindall(r´(.)(\1*)´,string]
+
+
+
+11) Maximum product of  three integers in a array....
+
+-->sort the array
+-->remove 0 from array 
+-->check product of least two index  ¨greater¨  maxium two indexś if yes --> take least two numbers as consideration and flag =0
+--> flag =0 and maximum entry is also negative --> take three numbers as maximum index  product ( max ,max-1,max-2)
+--> flag =0 and maximum entry is postive -->take  list index as 0 , 1  and max
+--> flag = 1 and take entry as list index as max , max-1 , max-2
+
+
+12) cat srini_log | grep "MBytes" |  awk 'BEGIN {sum=0;s=0};{print $8 ; s=($9=="Mbits/sec")?$8/1000:$8 ;sum+=s };END{print sum}' 
+
+
+Syntax
+============
+variables
+
+a= "srinivas"
+a=1
+a=1.2333
+
+type(a)
+
+>>> a="srinivas"
+>>> a
+'srinivas'
+>>> print a
+srinivas
+>>> print (a)
+srinivas
+>>> a=3.2
+>>> a
+3.2
+>>> a=3
+>>> type(a)
+<type 'int'>
+>>> a=3.2
+>>> type(a)
+<type 'float'>
+>>> a="srinivas"
+>>> type(a)
+<type 'str'>
+>>> a='srinivas'
+>>> type(a)
+<type 'str'>
+
+
+
+Dictionary
++++++++++++++
+dict={1:1,2:2,3:3}
+
+1)dict.copy()
+2)del dict[1]
+3)dict.fromkeys(dict,a )
+=>
+
+{
+1:[1,2,3,4,5],
+2:[1,2,3,4,5],
+3:[1,2,3,4,5],
+}
+
+4)dict.has_key(key)
+5)dict.pop(key)
+->result is value of key  and pops out key and value
+5)dict.keys()
+6)dict.values()
+
+7)dict.iterkeys()
+8)dict.iteritems()
+
+9)d.clear()
+
+10)len(dict)			
+11)type(dict)
+12)d.update(dictionary)
+
+
+List
++++++++++++++++
+a=[1,2,3,3,4,5]
+    
+a.clear()
+a.remove(entry)
+a.insert(index,entry)
+a.extend(listx)
+a.append(Y)
+a.pop() or a.pop(index)
+a= list-c + list-d 
+a.sort()
+a.reverse()
+a.count()
+a.index(x)
+a.remove(x)
+
+
+Tuples
+++++++++++++++++
+
+Tuples are immutable list
+faster iterable,easy and safe to use
+
+practical example of tuple
+===================
+x should be tuple
+x=(1,2)
+print `value of s %f and vale of of %s is` %x
+its use iterables in x
+
+
+Sets
++++++++++++++++++++++
+unordered unique
+a=([])
+
+a.union(b)
+a.interestion(b)
+
+a.differnce(b)
+a.intersection_update(b)
+
+a.difference_update(b)
+
+a.symmetric_difference(b)
+a.symmetric_difference_update(b)
+
+a.issubet(b)
+a.isdisjoint(b)
+a.issuperset(b)
+
+
+
+
+Error and exception
++++++++++++++++++++++
+
+try :
+	do something
+
+except IOError as exp :
+	print exp
+	raise customizedExcetion(´error´)
+except customizedException :
+	print --------	
+
+else :
+	print 	
+final:
+	print
+
+
+
+
+File operations
++++++++++++++++++++++
+
+fd=open(´Filename´,´r´) 
+fd.read() -->bigstring
+fd.readlines() -->return all lines in list
+fd.readline().strip() -->return 1 line at a time 
+fd.close()
+
+fd=open(´Filename´,´w´) 
+fd.write(string)
+fd.writelines(list)
+fd.close
+
+===================
+search file recursvely using python 
+=======================
+import sys, os, glob
+
+dir_list = ["c:\\books\\heap"]
+
+while len(dir_list) > 0:
+    cur_dir = dir_list[0]
+    del dir_list[0]
+    list_of_files = glob.glob(cur_dir+'\\*')
+    for book in list_of_files:
+        if os.path.isfile(book):
+            print(book)
+        else:
+            dir_list.append(book)
+===================
+
+import os
+import sys , glob 
+f = os.path.getmtime('test1.jpg')
+
+latest_file=max(list_of_files,key=os.path.getctime(file))
+print latest_file
+
+
+dir_list = ["c:\\"]
+
+
+import os
+import sys , globe
+
+for root, dirs,files in os.walk("c://*") :
+	print files 
+	print dir 
+
+	
+import os
+for root, dirs, files in os.walk(".", topdown=False):
+   for name in files:
+      print(os.path.join(root, name))
+   for name in dirs:
+      print(os.path.join(root, name))
+
+Diffenciated between files and directory using ls -l | grep '^d'
+list only files --->ls  -l | grep -i '^-'
+==> differnce ---input and raw_input 
+
+
+ 
+	  
+
+=====================
+
+if len(dir_list) >0 :
+    cur_directory=dir[0]
+	list_of_files = glob.glob (cur + '*')
+    print (list_of_files ) 	
+   
+
+
+Classs
+========================
+
+class variables
+-----------------
+
+
+>>> class srini() :
+...     a=1
+...     def __init__(self,b) :
+...             self.b=b
+... 
+>>> srini.a
+1
+
+>>> srini.b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: class srini has no attribute 'b'
+
+>>> q=srini(2)
+>>> q.a
+1
+>>> q.b
+2
+>>> class srini() :
+...     a=1
+...     def __init__(self,a) :
+...             self.a=a
+... 
+
+>>> srini.a
+1
+>>> d=srini(23)
+>>> d.a
+23
+>>> srini.a
+1
+
+Public and private variables in python 
+=======================
+
+class sri() :
+    """
+    testcase
+    """
+    class_variable=1
+    def __init__(self):
+        pass
+    def __str__(self):
+        pass
+    def tricky(self):
+        return "hello"
+
+    def sri1(self,a=1,b=2,c=3,d=4):
+        self.ram=1
+        print "a=%s ,b=%s ,c=%s ,d=%s"%(a,b,c,d)
+
+
+    def __method(self):
+        print "I'm a method private"
+
+    def method1(self):
+        print "iam in method1 calling __method"
+        self.__method()
+
+
+
+if __name__ == "__main__" :
+    s=sri()
+    a=s
+    #print a.sri1()
+    print (s.sri1(d=10,b=33,c=13))
+	#print (sri1(d=10,c=33,1))
+	#print (sri1(d=10,1,b=33,))
+    print (s.sri1(1,2,c=8,d=4))
+    #print (sri1(a=1,2,3,4))
+    print (s.ram)
+    print (s.__module__ ,s.__class__,s.__doc__,s.__str__())
+    print (s.__method()) ### private method we cannot access outside the class 
+	
+	
+	
+
+
+pdb debugger
+============
+import pdb
+pdb.set_trace()
+
+import telnetlib
+tn=telnetlib.telnet("ip",port)
+tn.read_until("u[U]sername")
+tn.write("lab")
+
+
+paramiko
+==============
+
+from paramiko import client
+
+class ssh:
+    client = None
+	
+
+
+	def __init__(self, address, username, password):
+        # Let the user know we're connecting to the server
+        print("Connecting to server.")
+        # Create a new SSH client
+        self.client = client.SSHClient()
+        # The following line is required if you want the script to be able to access a server that's not yet in the known_hosts file
+        self.client.set_missing_host_key_policy(client.AutoAddPolicy())
+        # Make the connection
+        self.client.connect(address, username=username, password=password, look_for_keys=False)
+		
+	def sendCommand(self, command):
+        # Check if connection is made previously
+        if(self.client):
+            stdin, stdout, stderr = self.client.exec_command(command)
+			output =stdout.readlines()
+			print '\n'.join(output)
+        else:
+            print("Connection not opened.")
+			
+		
+
+
+Multiprocessing
+===============
+import time
+import multiprocessing
+import telnetlib
+import json
+def  square (list1):
+	for i in range(1,100) :
+		time.sleep(0.03)
+		print ("square of " + str(i) +" : ",i**2)
+
+def cube (list1) :
+	for i in range(1,100) :
+		time.sleep(0.04)
+		print ( "cube " + str(i) + " : ",i**3)
+		
+
+if __name__ == "__main__" :		
+	a=[1,2,3,4,5]
+			
+	p1=multiprocessing.Process(target=square,args=(a,))
+	p2=multiprocessing.Process(target=cube,args=(a,))
+
+	p1.start()
+	p2.start()
+
+	p1.join()
+	p2.join()
+	print "hello done"
+	
+
+########
+Differnce b/w multiproccisng and multithreading
+With multiprocessing global variables works within only process since each process maintain its variables
+############
+
+import time
+import multiprocessing
+import telnetlib
+import json
+
+result_sqr=[]
+def  square(list1):
+	global result_sqr
+	for i in range(1,100) :
+		time.sleep(0.03)
+		#print ("square of " + str(i) +" : ",i**2)
+		result_sqr.append(i)
+		
+	print "result within process ", result_sqr
+
+		
+
+if __name__ == "__main__" :		
+	a=[1,2,3,4,5]
+			
+	p1=multiprocessing.Process(target=square,args=(a,))
+	#p2=multiprocessing.Process(target=cube,args=(a,))
+
+	p1.start()
+	#p2.start()
+
+	p1.join()
+	#p2.join()
+	print "result outside the multiprocess ", result_sqr
+	print "hello done"
+
+
+#Differnce b/w multiproccisng and multithreading
+
+import time
+import multiprocessing
+import telnetlib
+import json
+
+result_sqr = []
+
+
+def square(list1):
+    global result_sqr
+    for i in range(1, 100):
+        time.sleep(0.03)
+        # print ("square of " + str(i) +" : ",i**2)
+        result_sqr.append(i)
+
+    print "result within process ", result_sqr
+
+
+if __name__ == "__main__":
+    a = [1, 2, 3, 4, 5]
+
+    p1 = multiprocessing.Process(target=square, args=(a,))
+    # p2=multiprocessing.Process(target=cube,args=(a,))
+
+    p1.start()
+    # p2.start()
+
+    p1.join()
+    # p2.join()
+    print "result outside the multiprocess ", result_sqr
+    print "hello done"
+
+
+
+
+
+Classess 
+===============
+##class variables,class methods,__init_ varibales,self(instance),
+##parent class and child class can be differneciated using class_name.__bases__
+
+class Router() :
+    int_pwr="pwr0"
+    int_ft="f0"
+    int_processor="po"
+    def __init__(self,gig_int,ten_int):
+        self.gig_int="giga bytes"
+        self.ten_int="ten_bytes"
+        print "name of self.gig_int  is %s and name of ten_int is %s"%(self.gig_int,self.ten_int)
+    def vlan(self,vlan1,vlan2):
+        self.vlan1=vlan1
+        self.vlan2=vlan2
+        self.gig_int="vlan_gig0"
+
+
+class Router1(Router) :
+    pass
+    def vlan_1(self,vlan1,vlan2):
+        self.vlan1_1=vlan1
+        self.vlan1_2=vlan2
+
+
+
+print Router
+print "Accessing the class variables",Router.int_pwr,Router.int_processor
+r1=Router1("g10","t10")
+
+r1.vlan("Vlan1","Vlan2")
+print r1.vlan1
+print r1.vlan2
+print r1.gig_int
+r1.vlan_1("Vlan_1_1","Vlan_1_2")
+print r1.vlan1_1
+print r1.vlan1_2
+print r1.gig_int
+
+print r1.__class__
+print r1.__init__
+print Router.__bases__
+print Router1.__dict__
+print Router1.__bases__
+
+
+###########
+import sys ,traceback 
+traceback.print_exc([limit[, file]])
+This is a shorthand for print_exception(sys.exc_type, sys.exc_value, sys.exc_traceback, limit, file). (In fact, it uses sys.exc_info() to retrieve the same information in a thread-safe way instead of using the deprecated variables.)
+
+traceback.format_exc([limit])
+This is like print_exc(limit) but returns a string instead of printing to a file.
+
+New in version 2.
+
+
+###################### ppprint is used in dictionaries############
+import pprint 
+
+import pprint
+text="sriniavs"
+
+l={i:text.count(i) for i in text }
+pprint.pprint (l)
+print (l)
+
+
+###############os #################33
+
+import os
+import sys
+print dir(os) 
+
+
+###############use of findall and popen.read()
+
+
+>>> a= os.popen('ipconfig').read()
+
+>>> a
+'\nWindows IP Configuration\n\n\nEthernet adapter Ethernet:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . : cisco.com\n\nWireless LAN adapter Local Area Connection* 2:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . : \n\nWireless LAN adapter Wi-Fi:\n\n   Connection-specific DNS Suffix  . : cisco.com\n   Link-local IPv6 Address . . . . . : fe80::b970:8abf:6c2b:6e2c%4\n   IPv4 Address. . . . . . . . . . . : 10.196.135.214\n   Subnet Mask . . . . . . . . . . . : 255.255.254.0\n   Default Gateway . . . . . . . . . : 10.196.134.1\n\nEthernet adapter Bluetooth Network Connection:\n\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix  . : \n'
+>>> import re
+>>> ip=re.findall(r'\d+.\d+.\d+.\d+',a)
+>>> ip
+['10.196.135.214', '255.255.254.0', '10.196.134.1']
+>>> ip=re.findall(r'\d+.\d+.\d+.(\d+)',a)
+>>> ip
+['214', '0', '1']
+>>> ip=re.findall(r'\d+.\d+.(\d+).(\d+)',a)
+>>> ip
+[('135', '214'), ('254', '0'), ('134', '1')]
+
+a="""
+srinivas is bad boy
+tajammul is a bad boy 
+
+"""
+>>> for i in re.findall(r'\b(.*)',a) :
+...     print (i.split(' ')[0])
+...
+
+srinivas
+tajammual
+
+
+
+
+
+**connot use group for re.findall 
+subprocess will return in form of tuple 
+
+
+ subprocess.Popen('ipconfig', stdout=subprocess.PIPE, stderr=None, shell=True).communicate()
+(b'\r\nWindows IP Configuration\r\n\r\n\r\nEthernet adapter Ethernet:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : cisco.com\r\n\r\nWireless LAN adapter Local Area Connection* 2:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : \r\n\r\nWireless LAN adapter Wi-Fi:\r\n\r\n   Connection-specific DNS Suffix  . : cisco.com\r\n   Link-local IPv6 Address . . . . . : fe80::b970:8abf:6c2b:6e2c%4\r\n   IPv4 Address. . . . . . . . . . . : 10.196.135.214\r\n   Subnet Mask . . . . . . . . . . . : 255.255.254.0\r\n   Default Gateway . . . . . . . . . : 10.196.134.1\r\n\r\nEthernet adapter Bluetooth Network Connection:\r\n\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   Connection-specific DNS Suffix  . : \r\n', None)
+>>> a=subprocess.Popen('ipconfig', stdout=subprocess.PIPE, stderr=None, shell=True).communicate()
+
+##############logging###################
+import logging
+
+logger = logging.getLogger('<_script_name>')
+logger.setLevel(logging.DEBUG)
+# create file handler which logs even debug messages
+fh = logging.FileHandler('spam.log')
+fh.setLevel(logging.DEBUG)
+# create console handler with a higher log level
+ch = logging.StreamHandler()
+ch.setLevel(logging.ERROR)
+# create formatter and add it to the handlers
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+fh.setFormatter(formatter)
+# add the handlers to logger
+logger.addHandler(ch)
+logger.addHandler(fh)
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warn('warn message')
+logger.error('error message')
+logger.critical('critical message')
+
+######################
+
+##Comparing text data can be done ############
+
+using sets 
+
+A= set(A)
+B=set (B)
+A-B will give the result 
+
+check work present in line 
+===========================
+if a in line :
+	print "present in line "
+else :
+	print word is not presnt in line "
+	
+
+python package checking 
+=====================
+
+from distutils.sysconfig import get_python_lib
+print(get_python_lib())
+
+XML parsing 
+===================
+
+import xml.etree.ElementTree as ET
+tree = ET.parse('country_data.xml')
+root = tree.getroot()
+>>> root.tag
+'data'
+>>> root.attrib
+{}
+
+ for child in root:
+...     print child.tag, child.attrib
+...
+country {'name': 'Liechtenstein'}
+country {'name': 'Singapore'}
+country {'name': 'Panama'}
+
+ for neighbor in root.iter('neighbor'):
+...     print neighbor.attrib
+...
+{'name': 'Austria', 'direction': 'E'}
+{'name': 'Switzerland', 'direction': 'W'}
+{'name': 'Malaysia', 'direction': 'N'}
+{'name': 'Costa Rica', 'direction': 'W'}
+{'name': 'Colombia', 'direction': 'E'}
+
+tree = ET.parse('rpc.xml')
+doc = tree.getroot()
+
+for  node in  tree.iter():
+    name = node.attrib.get('text')
+    url = node.attrib.get('xmlUrl')
+	
+
+-----------------------
+import xml.etree.ElementTree as ET
+to use it fromstring method --. we should text 
+ET.fromstring(xml_text_data)
+
+
+
+=======================
+
+location of libraries-->ydk  
+
+
+
+
+socket io 
+=============================
+
+
+Emit.
+----------
+from socketIO_client import SocketIO, LoggingNamespace
+
+with SocketIO('localhost', 8000, LoggingNamespace) as socketIO:
+    socketIO.emit('aaa')
+    socketIO.wait(seconds=1)
+
+Emit with callback.
+--------------------	
+from socketIO_client import SocketIO, LoggingNamespace
+
+def on_bbb_response(*args):
+    print('on_bbb_response', args)
+
+with SocketIO('localhost', 8000, LoggingNamespace) as socketIO:
+    socketIO.emit('bbb', {'xxx': 'yyy'}, on_bbb_response)
+    socketIO.wait_for_callbacks(seconds=1)
+
+Define events.
+--------------
+
+from socketIO_client import SocketIO, LoggingNamespace
+
+def on_connect():
+    print('connect')
+
+def on_disconnect():
+    print('disconnect')
+
+def on_reconnect():
+    print('reconnect')
+
+def on_aaa_response(*args):
+    print('on_aaa_response', args)
+
+socketIO = SocketIO('localhost', 8000, LoggingNamespace)
+socketIO.on('connect', on_connect)
+socketIO.on('disconnect', on_disconnect)
+socketIO.on('reconnect', on_reconnect)
+
+# Listen
+socketIO.on('aaa_response', on_aaa_response)
+socketIO.emit('aaa')
+socketIO.emit('aaa')
+socketIO.wait(seconds=1)
+
+# Stop listening
+socketIO.off('aaa_response')
+socketIO.emit('aaa')
+socketIO.wait(seconds=1)
+
+# Listen only once
+socketIO.once('aaa_response', on_aaa_response)
+socketIO.emit('aaa')  # Activate aaa_response
+socketIO.emit('aaa')  # Ignore
+socketIO.wait(seconds=1)
+
+namspace with Basenamespace 
+=================================
+from socketIO_client import SocketIO, BaseNamespace
+
+class Namespace(BaseNamespace):
+
+    def on_aaa_response(self, *args):
+        print('on_aaa_response', args)
+        self.emit('bbb')
+
+socketIO = SocketIO('localhost', 8000, Namespace)
+socketIO.emit('aaa')
+socketIO.wait(seconds=1)
+	
+
+Creating virual env 
+====================
+https://pypi.python.org/pypi/virtualenv/1.8.2
+pip install virtualenv
+pip install virtualenvwrapper-powershell
+mkdir '~\.virtualenvs'
+virtualenv ENV
+activate using Scripts/activate in windows 
+
+
+Right to left splits 
+==============
+1)
+
+
+
+>>> ' a b c '.rsplit()
+['a', 'b', 'c']
+>>> ' a b c '.rsplit(None, 1)
+[' a b', 'c']
+>>> ' a b c '.rsplit(None, 2)
+[' a', 'b', 'c']
+>>> ' a b c '.rsplit(None, 3)
+['a', 'b', 'c']
+>>> ' a b c '.rsplit(None, 4)
+['a', 'b', 'c']
+>>> ' a b c '.rsplit(None, 5)
+['a', 'b', 'c']
+
+2)
+>>> '----a---b--c-'.rsplit('-')
+['', '', '', '', 'a', '', '', 'b', '', 'c', '']
+>>> '----a---b--c-'.rsplit('-', 1)
+['----a---b--c', '']
+>>> '----a---b--c-'.rsplit('-', 2)
+['----a---b-', 'c', '']
+>>> '----a---b--c-'.rsplit('-', 3)
+['----a---b', '', 'c', '']
+>>> '----a---b--c-'.rsplit('-', 4)
+['----a--', 'b', '', 'c', '']
+>>> '----a---b--c-'.rsplit('-', 5)
+['----a-', '', 'b', '', 'c', '']
+>>> '----a---b--c-'.rsplit('-', 6)
+['----a', '', '', 'b', '', 'c', '']
+
+
+
+Super questions
+===================
+
+
+def extendList(val, list=[]):
+	print "list is " ,list
+    list.append(val)
+    return list
+
+list1 = extendList(10)
+
+list2 = extendList(123,[])
+
+list3 = extendList('a')
+
+
+print ("list1 = %s" % list1)
+print ("list2 = %s" % list2)
+print ("list3 = %s" % list3)
+
+
+The output of the above code will be:
+
+list1 = [10, 'a']
+list2 = [123]
+list3 = [10, 'a']
+
+function returns function example 
+==================================
+
+>>> def multipliers():
+...   return [lambda x : i * x for i in range(4)]
+...
+...
+>>> print [m(2) for m in multipliers()]
+[6, 6, 6, 6]
+
+
+==========================
+class Parent(object):
+    x = 1
+
+class Child1(Parent):
+    pass
+
+class Child2(Parent):
+    pass
+
+print (Parent.x, Child1.x, Child2.x)
+Child1.x = 2
+print (Parent.x, Child1.x, Child2.x)
+Parent.x = 3
+print (Parent.x, Child1.x, Child2.x)
+
+output will be ............
+1 1 1
+1 2 1
+3 2 3
+
+The key to the answer is that, in Python, class variables are internally handled as dictionaries. If a variable name is not found in the dictionary of the current class, the class hierarchy (i.e., its parent classes) are searched until the referenced variable name is found (if the referenced variable name is not found in the class itself or anywhere in its hierarchy, an AttributeError occurs).
+Therefore, setting x = 1 in the Parent class makes the class variable x (with a value of 1) referenceable in that class and any of its children. That’s why the first print statement outputs 1 1 1.
+Subsequently, if any of its child classes overrides that value (for example, when we execute the statement Child1.x = 2), then the value is changed in that child only. That’s why the second print statement outputs 1 2 1.
+Finally, if the value is then changed in the Parent (for example, when we execute the statement Parent.x = 3), that change is reflected also by any children that have not yet overridden the value (which in this case would be Child2). That’s why the third print statement outputs 3 2 3.
+
+example 4
+=======================
+
+1. list = [ [ ] ] * 5
+2. list  # output?
+3. list[0].append(10)
+4. list  # output?
+5. list[1].append(20)
+6. list  # output?
+7. list.append(30)
+8. list  # output?
+
+output :
+[[], [], [], [], []]
+[[10], [10], [10], [10], [10]]
+[[10, 20], [10, 20], [10, 20], [10, 20], [10, 20]]
+[[10, 20], [10, 20], [10, 20], [10, 20], [10, 20], 30]
+
+---------------------------------------------------
+
+example 5
+---------------
+how to print a even indices of list 
+
+list = [1,2,3,4,5,6,5]
+list [::1] --> print very elment
+list [::2] -->print alternate elments like 1 ,3,5 even index 
+list [::3] --> every 3rd elments it picks up
+list [::-1] ----------> reverse order
+
+example 6
+---------------
+
+class DefaultDict(dict):
+  def __missing__(self, key):
+    return []
+
+	
+d = DefaultDict()
+d['florp'] = 127
+
+example 7
+-------------
+
+>>> def init():
+>>>     global a, b, A
+>>>     a = [1,2,3]
+>>>     A = a
+>>>     b = [ "a", "b", "c" ]
+>>> init()
+>>> a = b
+>>> b.insert(3, "d")
+>>> print(A, a, b)
+([1, 2, 3], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd'])  # a includes 'd'
+>>> init()
+>>> a = b[::]
+>>> b.insert(3,"d")
+>>> print(A, a, b)
+([1, 2, 3], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'])    # a lacks 'd'
+>>> init()
+>>> a[::] = b
+>>> b.insert(3, "d")
+>>> print(A, a, b)
+(['a', 'b', 'c'], ['a', 'b', 'c'], ['a', 'b', 'c', 'd'])
+
+python pass by value and refernece
+---------------------------------
+C:\Users\skogunde\Downloads>python
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> a=1
+>>> id(a)
+41967720L
+>>> def call(a) :
+...     print (id(a))
+...
+>>> call(a)
+41967720
+>>> b=[1,2,3,4]
+>>> def call_list(b) :
+...     print (id(b))
+...
+>>> call(b)
+45499656
+>>> id(b)
+45499656L
+>>> c={ '1' : 1 }
+>>> id(c)
+45562328L
+>>> def call_dict(c) :
+...     print (id(c))
+...
+>>> call_dict(c)
+45562328
+>>> e=[1,2,3,4]
+>>> def call_list_change(e) :
+...     e= e + [5,6]
+...     print (id(e))
+...
+>>> id(e)
+45499976L
+>>> call_list_change(e)
+45499144
+
+pass by value 
+
+class example1
+==========
+class sri() :
+    class_variable=1
+    def __init__(self):
+        pass
+
+
+if __name__ == "__main__" :
+    print sri().class_variable
+    s=sri()
+    s.class_variable=12
+    print s.class_variable
+	
+
+	
+ouptut :
+=========
+1
+12
+
+
+if __name__ == "__main__" :
+    print sri().class_variable
+    
+    sri().class_variable=12
+    print sri().class_variable
+output
+=====
+1
+1
+
+
+----------------------------------
+class sri() :
+    class_variable=1
+    def tricky(self):
+        return "hello"
+
+
+if __name__ == "__main__" :
+    print (s.tricky) --->return the funcation object 
+	print (s.tricky()) --> return the function output 
+
+
+----------------------------------	
+def sri1(a=1,b=2,c=3,d=4):
+    print "a=%s ,b=%s ,c=%s ,d=%s"%(a,b,c,d)
+
+
+if __name__ == "__main__" :
+    print (sri1(a=10,b=33,))
+	print (sri1(d=10,c=33,1)) -->error 
+	print (sri1(d=10,1,b=33,)) -->error
+	print (sri1(1,2,3,d=4))
+	print (sri1(a=10,b=33,))
+
+###cannot use the non-keyword arg after keyword arg	
+###u can use keyword argumnet after non keyword argumnet 
+
+###u cannot use multiple values { got multiple values for keyword argument 'a'}
+**class variable using instance can be declared  and used outside the class
+***All class method should have first parameter - with slef 
+*****TypeError: method3() takes no arguments (1 given), self is mandatory in class method 
+*****__repr__ ,__str__,__add__, classess 
+
+
+
+you can  add a path to sys.path
+-------------------------------
+import sys
+sys.path
+sys.path.append('/path/to/the/)'
+
+
+Robot-framework
+=================
+
+
+Python questions
+==================
+
+Multithread
+----------------
+import threading
+print threading.activeCount() #-->return 1
+print threading.enumerate() ###Main thread , 
+print threading.current_thread() ### main thread
+
+
+import threading
+
+def do_this() :
+    global dead
+    print "this is our thread\n"
+    while dead == True :
+        pass
+    #return 1
+
+if __name__ == "__main__" :
+    dead=True
+    our_thread=threading.Thread(target=do_this)
+    our_thread.start()
+    print our_thread.is_alive()
+
+    print threading.activeCount() #-->return 1
+    print threading.enumerate() ###Main thread , epoc time
+    print threading.current_thread() ### main thread.epoc time
+    raw_input("Hit to to enter")
+    dead=False
+    print our_thread.is_alive()
+
+	
+import threading
+
+threading.enumerate ---> similar to current thread 
+isactive --> True /False 
+current_thread --> currentl thread , main thread 
+activeCount  --> number of active count 
+
+	
+defaut- >thread-1 if no name for thread is specified
+threading.activeCount(): Returns the number of thread objects that are active.
+threading.currentThread(): Returns the number of thread objects in the caller's thread control.
+threading.enumerate(): Returns a list of all thread objects that are currently active.
+run(): The run() method is the entry point for a thread.
+start(): The start() method starts a thread by calling the run method.
+join([time]): The join() waits for threads to terminate.
+isAlive(): The isAlive() method checks whether a thread is still executing.
+getName(): The getName() method returns the name of a thread.
+setName(): The setName() method sets the name of a thread 
+
+Before starting identication thread id is NONE and after it start thread is 
+our_thread.ident is identification number will stay after thread is alive too 
+main thread is not a daemon thread 
+our_thread.setDaemon() --> make set the thread daemon 
+
+
+
+	
+
+
+Create a pseudocode/algorithm for the following problem.
+·  2 threads accessing & manipulating a global variable.
+o    Thread 1: should set the variable to a non-zero value if it sees the previous value as zero.
+o    Thread 2: should set the variable to zero if it sees a non-zero value.
+o    Thread 3: Simply prints the variable but, only when it changes from zero to non-zero or vice versa.It should not print 2 zeros or, same non-zero number twice.
+·  Conditions:
+o    The global variable will be set to 0 at the start.
+o    The threads should not step on each other.
+o    The non-zero values can be randomly generated.
+o    The pseudocode/algorithm should be well documented/commented.
+
+
+Threads of a process can share the memory of global variables.
+If a global variable is changed in one thread, this change is valid for all threads. A thread can have local variables.
+=======================================
+bracket problem
+-------------------
+from pythonds.basic.stack import Stack
+
+def parChecker(symbolString):
+    s = Stack()
+    balanced = True
+    index = 0
+    while index < len(symbolString) and balanced:
+        symbol = symbolString[index]
+        if symbol == "(":
+            s.push(symbol)
+        else:
+            if s.isEmpty():
+                balanced = False
+            else:
+                s.pop()
+
+        index = index + 1
+
+    if balanced and s.isEmpty():
+        return True
+    else:
+        return False
+
+print(parChecker('((()))'))
+print(parChecker('(()'))
+
+my logic
+===========
+
+from pythonds.basic.stack import Stack
+
+s=Stack()
+var="{} { }{}{}"
+
+balance=True
+count=0
+for i in  var:
+    if i == '{' or i == '}' :
+        if i == '{' :
+            s.push(i)
+            count +=1
+
+        else:
+
+            if  s.isEmpty() :
+                balance =False
+                break
+            elif i == '}' :
+                s.pop()
+                count =count -1
+
+            else :
+                pass
+
+
+if balance and count == 0 :
+    print ("valid")
+
+else :
+    print ("invalid")
+
+
+
+--------------------------
+probelm of sorting 
+sorted([value,key for (key,value) in dict.iterable ])
+
+import operator
+sorted(myDict.values(), key=operator.itemgetter(0), reverse=True)
+
+---------------------
+
+import Stack
+
+s=Stack()
+balance=true 
+while index <= len(string) and balance : 
+
+	if elemnet == '{' :
+		s.push()
+	else :
+		if s.isempty() :
+			balnce=false 
+		else :
+			s.pop()
+	
+	
+	if balance == false :
+		return False 
+	index = index + 1
+	
+re.split split using multiple delimiters
+========================================
+
+>>> a='Beautiful, is; better*than\nugly'
+>>> import re
+>>> re.split('; |, |\*|\n',a)
+['Beautiful', 'is', 'better', 'than', 'ugly']
+
+
+
+remove the repetaive tuple pairs 
+=====================================
+
+list=[('U1','U2'),('U2','U1'),('U3','U4'),('U1','U2'),('U2','U1'),('U1','U2')]
+
+non_rep=[list[0],]
+before= non_rep
+orginal=list
+for i in  list[1::]:
+
+    if i not  in non_rep :
+        non_rep.append(i)
+		
+print set(tuple(sorted(p)) for p in non_rep)
+print set( frozenset(p) for p in tuple(non_rep))
+
+
+python secrete
+=================
+type(int) # Returns type. So int is an object of type type.
+isinstance(int, type) # Returns True
+isinstance(int, object) # Returns True
+type(type) # Returns type. So type is an object of type type. Truth.
+type(object) # Returns type. So object is an object of type type. Mind blown
+
+---------------------------------------------------
+password hashing 
+===============
+import hashlib
+import os
+import getpass
+
+pswd = getpass.getpass('Password:')
+
+#password = "password"
+salt = os.urandom(16)
+ 
+m = hashlib.md5()
+m.update(salt + pswd)
+m.hexdigest()
+
+pdb.set_trace()
+
+
+------------------------------------------------------
+Terminal coloring
+===================
+from termcolor import colored,cprint  # pip3 install termcolor
+# try piping through 'less -r'
+
+seq = map(lambda x: "{0:>2} {1}".format(str(x), "*" * x), range(50))
+
+for i, text in enumerate(seq):
+    if i % 4 == 0:
+        text = colored(text, "grey", "on_green")
+    print(text)
+
+
+import sys
+from termcolor import colored, cprint
+
+text = colored('Hello, World!', 'red', attrs=['reverse', 'blink'])
+
+cprint('Hello, World!', 'green', 'on_red')
+
+print_red_on_cyan = lambda x: cprint(x, 'red', 'on_cyan')
+print_red_on_cyan('Hello, World!')
+print_red_on_cyan('Hello, Universe!')
+
+for i in range(10):
+    cprint(i, 'magenta', end='')
+
+cprint("Attention!", 'red', attrs=['bold'], file=sys.stderr)
+
+==============================
+Text Properties
+
+Text colors:
+-------------
+grey
+red
+green
+yellow
+blue
+magenta
+cyan
+white
+
+
+Text highlights:
+------------------
+on_grey
+on_red
+on_green
+on_yellow
+on_blue
+on_magenta
+on_cyan
+on_white
+
+Attributes:
+--------------
+bold
+dark
+underline
+blink
+reverse
+concealed
+
+
+============================================================
+
+from __future__ import print_function
+
+# mod_attrs_and_types.py
+# Purpose: To show the attribute names and types
+# of a Python module, to help with learning about it.
+
+
+import sys
+
+def attrs_and_types(mod_name):
+
+    print('Attributes and their types for module {}:'.format(mod_name))
+    print()
+    for num, attr in enumerate(dir(eval(mod_name))):
+        print("{idx}: {nam:30}  {typ}".format(
+            idx=str(num + 1).rjust(4),
+            nam=(mod_name + '.' + attr).ljust(30),
+            typ=type(eval(mod_name + '.' + attr))))
+
+attrs_and_types(list.__name__)
+
+
+========================================
+
+import poplib
+import time
+import subprocess
+from email import parser
+from datetime import datetime
+
+# -------------------------------------
+# Send an e-mail to a g-mail address that will shutdown the computer
+#
+# Acceptable format: SHUTDOWN YOURSELF {DATE}
+# Acceptable DATE format: YEAR-MONTH-DAY
+# Example: SHUTDOWN YOURSELF 2016-26-05
+#
+# To avoid from unknown shutdown mails
+# We will check later if the mail is coming from a specific address
+# So that only one e-mail address can shutdown your computer
+# And you will decide that e-mail address
+# -------------------------------------
+
+# check the mail is came from the correct address
+# for example;
+# assume you enter 'mymail@hotmail.com' to from_addr
+# we will check it later if the mail is coming from 'mymail@hotmail.com'
+
+from_addr = input("From address: ")
+
+while True:
+
+    # connect gmail
+    pop_conn = poplib.POP3_SSL('pop.gmail.com')
+
+    # make sure we are connected to POP, get POP-WELCOME message
+
+    print ("\n" + str(pop_conn.getwelcome())[6:50])
+
+    pop_conn.user('srinivasa.sjce@gmail.com')  # e-mail address
+    pop_conn.pass_('nalina@01')  # passwalk
+	
+
+    # check how many mails we have
+    mail_info = pop_conn.stat()
+    print ("Number of new emails: %s (%s bytes)" % mail_info)
+
+    nmails = mail_info[0]
+
+    # search for SUBJECT-FROM-DATE elements in the mails
+    for i in range(nmails):
+        for email in pop_conn.retr(i + 1):
+            try:
+                for mail in email:
+                    if "Subject" in str(mail):
+                        t = str(mail)
+                    if "From" in str(mail):
+                        fr = str(mail)
+                    if "Date" in str(mail):
+                        dt = str(mail)
+            except:
+                # there are integers in the mails, simply pass the errors
+                pass
+
+    # command checker
+    command = "SHUTDOWN YOURSELF"
+
+    # slice all SUBJECT from mail
+    bolt = t[2:-1]
+
+    try:
+        # slice SUBJECT's elements in a list
+        boltapply = bolt.split(" ")[1] + " " + bolt.split(" ")[2] + " " + bolt.split(" ")[3]
+
+        # slice 'boltapply' to check if they are same with COMMAND
+        boltapply_subject = boltapply.split(" ")[0] + " " + boltapply.split(" ")[1]
+
+        # slice 'boltapply' - get date part
+        boltapply_date = boltapply.split(" ")[-1]
+
+        # find current time
+        timee = datetime.now()
+
+        # current day - order: YEAR-MONTH-DAY
+        timee_edit = str(timee.year) + "-" + "{:0>2}".format(str(timee.month)) + "-" + str(timee.day)
+
+        # current time - order: HOUR-MINUTE
+        timee_hour = str(timee.hour) + "." + str(timee.minute)
+
+        # slice 'dt' from MAIL - 'dt' is the date part from the MAILS
+        dt_Edit = dt.split(" ")[5].split(":")[0] + "." + dt.split(" ")[5].split(":")[1]
+
+        # check where are the MAILS from
+        # so we can be sure it's from the address that we input above
+        from_read = fr.split(" ")[-1].split("<")[1].split(">")[0]
+
+        # first, check if YEAR-MONTH-DAY order is the same as today's DATE
+        if boltapply_date == timee_edit:
+            # then check if the MAIL sent before 1 HOUR, command(SHUTDOWN YOURSELF) is same as SUBJECT and is the mail came from CORRECT ADDRESS('from_addr')
+            if datetime.now().hour - int(dt.split(" ")[5].split(":")[0]) == 0 and datetime.now().minute - int(
+                    dt.split(" ")[5].split(":")[1]) <= 59 and command == boltapply_subject :
+                # if all requirements are met, call "subprocess 'shutdown.exe'" and shutdown the computer in N seconds (it's 26 seconds now)
+                subprocess.call(["shutdown.exe", "-f", "-s", "-t", "26"])
+
+    except:
+        # if SUBJECT is in wrong order
+        # if there is no SUBJECT
+        # if there is SUBJECT but there is no DATE
+        # pass it
+
+        # for example;
+        # a subject like 'SHUTDOWN YOURSELF 2016' will end up with a TypeError (see above we are slicing SUBJECT 'boltapply')
+
+        pass
+
+    # wait 40 seconds
+    time.sleep(40)
+=============================================
+	
+	Multiprocessing 
+	----------------
+	address space will be indepentant of process i .e each process will have its own adress space 
+	global variable cannot be shared under process 
+	
+	def calc_square (numbers,result,v) :
+	v.value='srini'
+	
+		
+	
+	import multiprocessing
+	result=multiprocessing.Array(i,3)
+	v=multiprocessing.Value('d',0.0)
+	
+	p1=multiprocessing.Process(target=calc_square,args=(numbers,result,v)
+	p1.start()
+	p1.join()
+	print v.Value
+	
+	
+	
+	
+	
+sharing variable using arrays and values 
+===============================
+	import multiprocessing
+
+def calc_square(numbers, result, v):
+    v.value = 5.76
+    for idx,value in enumerate(numbers) :
+        result[idx] = value * value
+
+
+if __name__ == "__main__" :
+    result = multiprocessing.Array('i', 3)
+	
+    numbers=[1,2,3]
+    v = multiprocessing.Value('d', 0.0)
+    p1 = multiprocessing.Process(target=calc_square, args=(numbers, result, v) )
+    p1.start()
+    p1.join()
+    print v.value
+
+    print result[:]
+	
+==============================
+import multiprocessing
+
+def calc_square(numbers,q):
+    
+    for  i in numbers :
+		q.put(i*i) 
+
+if __name__ == "__main__" :
+    q = multiprocessing.Queue()
+	
+    numbers=[1,2,3]
+    
+    p1 = multiprocessing.Process(target=calc_square, args=(numbers,q) )
+    p1.start()
+    p1.join()
+    
+
+    print q.get()
+	
+===============================
+Queues
+-------
+
+import multiprocessing
+
+
+def calc_square(numbers, q):
+    for i in numbers:
+        q.put(i * i)
+
+
+if __name__ == "__main__":
+    q = multiprocessing.Queue()
+
+    numbers = [1, 2, 3]
+
+    p1 = multiprocessing.Process(target=calc_square, args=(numbers, q))
+    p1.start()
+    p1.join()
+    
+    while q.empty() is False :
+        print q.get()
+		
+==================================
+from testlink import TestlinkAPIClient, TestLinkHelper
+import sys
+
+URL = 'http://172.23.163.35/testlink/lib/api/xmlrpc/v1/xmlrpc.php'
+DEVKEY = '14435b03d3ee9e1496b9fc90047e4ff6'
+
+tl_helper = TestLinkHelper()
+myTestLink = tl_helper.connect(TestlinkAPIClient)
+myTestLink.__init__(URL, DEVKEY)
+
+a=myTestLink.checkDevKey()
+print  myTestLink.countProjects()
+print  myTestLink.testLinkVersion()
+print(myTestLink.connectionInfo())
+print("")
+a=myTestLink.listProjects
+
+print  "\n"
+import pdb
+pdb.set_trace()
+
+print("Number of Projects in TestLink: %i " % len(myTestLink.getProjects()))
+print("")
+for project in myTestLink.getProjects():
+    print("Name: %(name)s ID: %(id)s " % project)
+print("")
+
+
+
+import multiprocessing
+
+def deposit(v):
+	for i in range(100) :
+		v.balance= v.balance +1 
+
+def withdraw(v) :
+	for i in range(100) :
+		v.balance = v.balance -1 
+
+if __name__ == "__main__" :
+	v=multiproccisng.Value('i',4)
+	p1=multiprocessing.Process(target=deposit,args= (v,))
+	p2=multiprocessing.Process(target=withdraw,args=(v,))
+	p1.start()
+	p2.start()
+	p1.join()
+	p2.join()
+	
+	print v.balance 
+
+===============================
+
+Multiprocessing Queue and Pipe 
+============================
+
+admin-act#cat pxssh_queue.py
+from pexpect import pxssh
+from termcolor import cprint
+import sys
+import os
+import re
+import  multiprocessing
+
+username_list = [
+                '2620:cb:0:b044:ff:1:1:10' ,
+                '172.23.240.35',
+                '172.23.240.38',
+
+                '172.23.240.39',
+#               '2620:cb:0:b044::90b3',
+#               '2620:cb:0:b044::5b99'
+
+
+        ]
+
+command_list = [
+                        'uptime',
+                        'ngcstatus.sh',
+                        'modversion.sh',
+                ]
+
+filter_ngc= " \'RPL-Daemon|Current|SECURITY|ROOT IPv6 addr|START FREQ|SSID:|Enabled MAC:\' "
+filter_modversion = "-A 4 \'Major Number\' "
+os.system("clear")
+
+def ping_test(address) :
+        if  re.search(r':',address) :
+                command = "ping6 -c 2 " + str(address)
+        elif re.search(r'.',address) :
+                command = "ping -c 2 " +str (address)
+
+        a= re.findall ( r'.*(\d)\s*received',os.popen(command).read() )
+        if a[0] == '2' or a[0] == '1' :
+                cprint   ( "ping : %s SUCESS "%address.upper() ,'red' )
+        else :
+                cprint   ( "ping : %s  FAIL "%address.upper() ,'red' )
+
+                sys.exit()
+
+#output= {}
+
+def ssh_command(host,command,output) :
+        s = pxssh.pxssh()
+        if not s.login (host, 'root',password='itron',port=22, auto_prompt_reset=False) :
+                cprint ("SSH session failed on login -%s"%host ,red )
+                print str(s)
+        else:
+                label ="=====================\n command : %s of %s\n ======================\n"%(command,host)
+                if "ngcstatus.sh" in command :
+                        f=filter_ngc
+                elif  "modversion" in command :
+                        f= filter_modversion
+                else :
+                        f= '\'\''
+                command = command  + " | grep -E " + f
+
+                s.sendline (command)
+                s.prompt()
+                a = str (label) + str (s.before)        # match the prompt
+                #cprint (a,'blue')
+                output.send(a)
+                s.logout()
+
+for  i in username_list :
+        ping_test(i)
+
+
+#proc = Process(target=doubler, args=(5,))
+procs = []
+output = multiprocessing.Queue(maxsize=0)
+pipe_list=[]
+
+for command in command_list :
+    cprint ("Waiting  for status : %s"%command ,'cyan')
+    for host in username_list :
+        recv_end, send_end = multiprocessing.Pipe(False)
+        proc=multiprocessing.Process(target=ssh_command, args=(host,command,send_end))
+        procs.append(proc)
+        pipe_list.append(recv_end)
+        proc.start()
+
+
+for proc in procs:
+        proc.join()
+
+
+result_list = [x.recv() for x in pipe_list]
+print result_list
+
+======================================
+
+Write a program to solve a classic ancient Chinese puzzle: 
+We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
+
+Hint:
+Use for loop to iterate all possible solutions.
+
+Solution:
+
+def solve(numheads,numlegs):
+    ns='No solutions!'
+    for i in range(numheads+1):
+        j=numheads-i
+        if 2*i+4*j==numlegs:
+            return i,j
+    return ns,ns
+
+numheads=35
+numlegs=94
+solutions=solve(numheads,numlegs)
+print solutions
+===========================================
+Flush the output of python  print 
+import sys
+
+sys.stdout.flush()
+
+trunc() -> truncate to int 
+
+tasks in python
+===============
+scripts for Robot framework  and ride.py 
+Pytest framework 
+Hands on usage on pexecpt,netmiko,pxssh,parmiko 
+usage of regular expressions ,Cli parsing like textFsm
+json,yaml,csv,xml,text,image file parsing 
+Hands on knowlege on  classes ,decorotaros ,collections ,Multiprocessing and multithreading(use of locks) ,Genarators 
+Stack and Queue operations 
+Http post and get operaions using json or html content 
+
+Projects worked for Client 
+==========================
+1)End to end automation for  Testlink 
+2)Tshark parsing for WiFi packets 
+3)Multiprocessing operations for 100 nodes in IOT enivironment 
+4)CAN Automation using CSV file parsing 
+5)AP and clinet connectivity using http post and get operations 
+
+ 
+
+Django
+======
+using django framework 
+redirection,html request ,
+forms 
+login pages 
+Authentication 
+
+
+
+
+Hands on Python 
+==============
+python 2 v/s python 3
+Variables-genral,lists,dictionay,sets,tuple
+Hands on programs on lists,dictionaries 
+conditional statements  and looping techniques 
+Functions (kwargs and args )and modules,lambda functions
+FILE-IO
+Regular expressions 
+Handling Exceptions and logging  
+useful python libraries exploration like sys,os 
+classes ,inhertience
+Decorators
+Generators and iterators 
+Collections 
+Multiprocessing and Multithreading 
+ssh,netmiko,pexpect,pxssh 
+ 
+
+
+Testing framework 
+==================
+Robot framework
+Pytest 
+
+Perl 
+========
+Regular expressions 
+pexecpt scripts 
+database interactions 
+CGI scripting 
+How to design the automation framework
+
+
+
+Bash  scripting 
+===============
+Hands any complex coding using awk ,sed ,grep , cut comamnds 
+File operations 
+sshpass and scp operations 
+
+
+
+
+
+
+
+
+
+
+
+
+
