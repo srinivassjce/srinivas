@@ -1,0 +1,33 @@
+first eapol frame is 550
+second eapol frame is 552
+third eapol frame is 554
+four eapol frame is 556
+[32mEAPOL_HANDSHAKE TAKEN TIME: 0.005901 [0m
+[36m
+*************************
+Validation of EAPOL-MSG-1 flags and IE's
+*************************
+[0m
+[36m
+*************************
+Validation of EAPOL-MSG-2 flags and IE's
+*************************
+[0m
+[36m
+*************************
+Validation of EAPOL-MSG-3 flags and IE's
+*************************
+[0m
+[36m
+*************************
+Validation of EAPOL-MSG-4 flags and IE's
+*************************
+[0m
+[32m
+********************************
+
+PASS::
+
+********************************
+
+[0m
