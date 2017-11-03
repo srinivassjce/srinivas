@@ -1,0 +1,13 @@
+scanners:
+  hostname:
+    web01.nyc.mycorp.com:
+      port: 9900
+      scans:
+        - "cisco scan"
+        - "network sec scan"
+        - "windows sec scan"
+    web05.tex.mycorp.com:
+      port: 9923
+      scans:
+        - "tex network"
+        - "infra scan"

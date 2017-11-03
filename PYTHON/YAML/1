@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import yaml
+import re
+import requests
+import sys
+import os
+
+
+with open ('1.yaml','r') as f
+	data=yaml.load(f)
+
+	print data
+
+
+
